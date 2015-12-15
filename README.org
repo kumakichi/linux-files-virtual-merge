@@ -1,0 +1,16 @@
+* How to use
+
+#+BEGIN_EXAMPLE
+  $ ls
+  demo.mp3
+  $ split -b 3000000 demo.mp3 
+  $ ls
+  demo.mp3  xaa  xab  xac
+  $ ./virtualMerge.sh xa*
+  [sudo] password for san: 
+  created /dev/mapper/joined
+  remember to clean environment using cleaner20151215153514.sh
+  $ sudo mplayer /dev/mapper/joined # use it
+  $ ./cleaner20151215153514.sh # clean environment
+#+END_EXAMPLE
+  
