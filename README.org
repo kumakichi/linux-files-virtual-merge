@@ -1,3 +1,10 @@
+* Usage
+  Normally, after downloading file parts from internet, we use :
+  #+BEGIN_SRC sh
+    cat file.part1 file.part2 ... > file
+  #+END_SRC
+
+  But i don't want to create a new file, so i wrote this script to 'merge'(virtually) file parts into one file
 * How to use
 
 #+BEGIN_EXAMPLE
@@ -16,3 +23,6 @@
 * Todo
 
   support user-defined mapper filename
+* Referenced
+
+[[http://stackoverflow.com/questions/5893531/fast-concatenate-multiple-files-on-linux][Fast concatenate multiple files on Linux]]
