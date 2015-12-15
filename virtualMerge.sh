@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mapperFile="joined"
+mapperFileFull="/dev/mapper/$mapperFile"
 cleanerFile="cleaner$(date +%Y%m%d%H%M%S).sh"
 
 loopSet="sudo losetup -v -f"
@@ -36,6 +37,12 @@ filesNum=$#
 if [ $filesNum -lt 1 ]
 then
     echo "Usage: $0 [FILE]..."
+    exit
+fi
+
+if [ -f $mapperFileFull ]
+then
+    echo "Already exists a file named $mapperFile"
     exit
 fi
 
@@ -75,5 +82,5 @@ chmod +x $cleanerFile
 
 eval $createCmd
 
-echo "created /dev/mapper/$mapperFile"
+echo "created $mapperFileFull"
 echo "remember to clean environment using $cleanerFile"
