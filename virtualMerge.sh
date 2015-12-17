@@ -77,6 +77,7 @@ cat<<EOF>$cleanerFile
 #!/bin/bash
 
 $cleanCmd
+rm -- "\$0"
 EOF
 chmod +x $cleanerFile
 
